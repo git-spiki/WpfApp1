@@ -20,94 +20,68 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private double _currentval = 0;
+        private double _storedval = 0;
+        private string _operation = "+";
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void btn7_Click(object sender, RoutedEventArgs e)
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Button button = (Button)sender;
+            string number = button.Content.ToString();
+            if (txtDisplay.Text == "0" && number != ".")
+            {
+                txtDisplay.Text = number;
+            }
+            else
+            {
+                txtDisplay.Text += number;
+            }
         }
 
-        private void btn8_Click(object sender, RoutedEventArgs e)
+        private void OperationButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Button button = (Button)sender;
+            _operation = button.Content.ToString();
+            _storedval = double.Parse(txtDisplay.Text);
+            txtDisplay.Text = "0";
         }
 
-        private void btn9_Click(object sender, RoutedEventArgs e)
+        private void EqualsButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _currentval = double.Parse(txtDisplay.Text);
+            switch (_operation)
+            {
+                case "-":
+                    _currentval = _storedval - _currentval;
+                    break;
+                case "*":
+                    _currentval *= _storedval;
+                    break;
+                case "/":
+                    if (_currentval == 0)
+                    {
+                        MessageBox.Show("хлоп");
+                        break;
+                    }
+                    _currentval = _storedval / _currentval;
+                    break;
+                default:
+                    _currentval += _storedval;
+                    break;
+            }
+            txtDisplay.Text = _currentval.ToString();
+            _operation = "+";
         }
 
-        private void btn4_Click(object sender, RoutedEventArgs e)
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btn5_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btn6_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btn1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btn3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btn2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btn0_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnDecemal_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnEquals_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnRemove_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnMulti_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnDevide_Click(object sender, RoutedEventArgs e)
-        {
-
+            txtDisplay.Text = "0";
+            _storedval = 0;
+            _currentval = 0;
         }
     }
 }
