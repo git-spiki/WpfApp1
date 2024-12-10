@@ -39,13 +39,67 @@
             <Button Name="btn3" Content="3" Grid.Row="3" Grid.Column="2" Click="NumberButton_Click"></Button>
 
             <Button Name="btn0" Content="0" Grid.Row="4" Grid.Column="1" Click="NumberButton_Click"></Button>
-            <Button Name="btnDecemal" Content="." Grid.Row="4" Grid.Column="2" Click="btnDecemal_Click"></Button>
-            <Button Name="btnEquals" Content="=" Grid.Row="0" Grid.Column="3" Click="EqualsButton_Click"></Button>
-            <Button Name="btnAdd" Content="+" Grid.Row="1" Grid.Column="4" Click="OperationButton_Click"></Button>
-            <Button Name="btnRemove" Content="-" Grid.Row="2" Grid.Column="4" Click="OperationButton_Click"></Button>
-            <Button Name="btnMulti" Content="*" Grid.Row="3" Grid.Column="4" Click="OperationButton_Click"></Button>
-            <Button Name="btnDevide" Content="/" Grid.Row="4" Grid.Column="4" Click="OperationButton_Click"></Button>
-            <Button Name="btnClear" Content="C" Grid.Row="4" Grid.Column="0" Click="ClearButton_Click"></Button>
+            <Button Name="btnDecemal" Content="." Grid.Row="4" Grid.Column="2"></Button>
+            <Button Name="btnEquals" Content="=" Grid.Row="0" Grid.Column="3" Click="EqualsButton_Click">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock Text="Эта кнопка делает за вас сложнейшие математические вычисления." />
+                            <Image Name="EqualsTip" Source="https://static.life.ru/publications/2020/4/27/745022544533.322.gif" Height="200" Width="400"></Image>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Name="btnAdd" Content="+" Grid.Row="1" Grid.Column="4" Click="OperationButton_Click">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock Text="Плюсует два числа, так как это очень сложно сделать." />
+                            <Image Name="PlusTip" Source="https://i.pinimg.com/originals/55/e6/0b/55e60b7064da422d64a67a6ac9d41abd.gif" Height="200" Width="400"></Image>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Name="btnRemove" Content="-" Grid.Row="2" Grid.Column="4" Click="OperationButton_Click">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock Text="Устраивает гладиаторские бои между двумя числами, победителя вы увидите в результате" />
+                            <Image Name="MinusTip" Source="https://i.pinimg.com/736x/1e/da/f4/1edaf4692902b74b7798b73c6a544850.jpg" Height="200" Width="400"></Image>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Name="btnMulti" Content="*" Grid.Row="3" Grid.Column="4" Click="OperationButton_Click">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock Text="Заставляет цифры почковаться" />
+                            <Image Name="MultiTip" Source="https://avatars.mds.yandex.net/i?id=5e9d33e8cdfb4be9cd3d5b82bab7e8dd_l-5248122-images-thumbs" Height="200" Width="400"></Image>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Name="btnDevide" Content="/" Grid.Row="4" Grid.Column="4" Click="OperationButton_Click">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock Text="Заставляет цифры исчезнуть" />
+                            <Image Name="DevideTip" Source="https://avatars.mds.yandex.net/i?id=fae5cc480639be8e5cd55d7f3e07287c_l-5318461-images-thumbs" Height="200" Width="400"></Image>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Name="btnClear" Content="C" Grid.Row="4" Grid.Column="0" Click="ClearButton_Click">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock Text="Стирает цифры с вашей оперативки ;3" />
+                            <Image Name="ClearTip" Source="https://avatars.mds.yandex.net/i?id=b7a91997a2549c62ff9f2ac978505915_l-5232622-images-thumbs" Height="200" Width="400"></Image>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
         </Grid>
         <!-- -->
     </Grid>
